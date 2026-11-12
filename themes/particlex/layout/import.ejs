@@ -1,0 +1,22 @@
+<script src="<%- url_for('/vendor/vue.js') %>"></script>
+<link rel="stylesheet" href="<%- url_for('/vendor/fontawesome/css/all.min.css') %>" />
+<script>const mixins = {};</script>
+<% if (theme.highlight.enable) { %>
+<script src="<%- url_for('/vendor/highlight.js') %>"></script>
+<link rel="stylesheet" href="<%- url_for('/vendor/highlight-github.css') %>" />
+<script src="<%- url_for('/js/lib/highlight.js') %>"></script>
+<% } %>
+<% if (theme.math.enable) { %>
+<link rel="stylesheet" href="<%- url_for('/vendor/katex/katex.min.css') %>" />
+<% } %>
+<% if (theme.preview.enable) { %>
+<script src="<%- url_for('/js/lib/preview.js') %>"></script>
+<% } %>
+<% if (type === 'archives' && theme.search.enable) { %>
+<script src="<%- url_for('/js/lib/search.js') %>"></script>
+<% } %>
+<% if (type === 'index') { %>
+<script src="<%- url_for('/js/lib/home.js') %>"></script>
+<% } %>
+<link rel="stylesheet" href="<%- url_for('/css/main.css') %>" />
+<link rel="stylesheet" href="<%- url_for('/css/particlex-notes.css') %>" />

@@ -1,0 +1,94 @@
+:root {
+  /* 改色从这里开始：主色、点缀色、正文、背景。 */
+  --note-accent: #6f9484;
+  --note-pink: #bb8c89;
+  --note-text: #435b54;
+  --note-bg: #f7faf7;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+#main.into-enter-from { transform: translateY(12px); }
+body { background: var(--note-bg); color: var(--note-text); font-family: system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif; }
+button, input { font: inherit; }
+a { color: var(--note-accent); }
+a:hover { color: var(--note-pink); }
+pre, code, .hljs, .input, .language { font-family: Consolas, 'Cascadia Code', monospace; }
+#home-head { box-sizing: border-box; align-items: center; justify-content: flex-end; padding: 0 6vw; }
+/* 原图保留完整文件；放大显示中间插画区域，避开上下白边。 */
+#home-head #home-background { background-size: max(100vw, 142vh) auto; background-position: center 43%; }
+#home-head #home-info { flex: 0 0 auto; margin: 0; width: 360px; height: 360px; }
+#home-head #home-info .info, #home-head #home-info .loop { width: 360px; height: 360px; }
+#home-head #home-info .loop { left: 0; top: 0; }
+#home-head #home-info .info { background: #fffffff0; backdrop-filter: blur(2px); color: #405c50; }
+#home-head #home-info .info .wrap h1 { font-size: clamp(28px, 3vw, 38px); }
+#home-head #home-info .info .wrap h3 { font-size: 19px; line-height: 1.7; }
+#home-head #home-info .info .wrap h5 { font-size: 14px; line-height: 1.7; }
+#menu, #menu.menu-color { background: #f4faf3e6; backdrop-filter: blur(8px); }
+#menu.menu-color #desktop-menu a, #menu.menu-color #mobile-menu a, #menu.menu-color #mobile-menu .title { color: #405c50; }
+#home-posts .post, #card-style { border-radius: 18px; }
+#loading img { width: 88px; height: 88px; }
+#loading p { color: #7c8caa; }
+.reading-layout { max-width: 1280px; margin: 92px auto 40px; padding: 0 24px; display: grid; grid-template-columns: minmax(0, 1fr) 265px; gap: 32px; align-items: start; }
+.reading-layout.no-toc { grid-template-columns: minmax(0, 900px); justify-content: center; }
+.reading-layout .article { width: auto; min-width: 0; margin: 0; padding: 36px; background: #fff; border: 1px solid #e8edf7; border-radius: 20px; box-shadow: 0 10px 38px #6689c70a; }
+.article > div:first-child h1 { font-size: clamp(27px, 3vw, 36px); line-height: 1.5; }
+.article .content { margin: 34px 0 12px; font-size: 16px; line-height: 1.95; }
+.article .content :is(h1,h2,h3,h4,h5,h6) { scroll-margin-top: 76px; color: #3c5070; line-height: 1.6; }
+.article .content h2 { padding-bottom: 8px; border-bottom: 1px solid #e8edf7; margin-top: 42px; }
+.article .content h3 { margin-top: 30px; }
+.article .content p { margin: 14px 0; }
+.article .content img { max-width: 100%; height: auto; }
+.content table:not(.hljs-ln) { display: block; max-width: 100%; overflow-x: auto; border-collapse: separate; }
+.content pre { max-width: 100%; overflow: hidden; border-radius: 10px; }
+.content pre code { display: block; padding: 20px; overflow-x: auto; white-space: pre; }
+.content pre .code-content { font-size: 13px; line-height: 1.7; padding: 45px 20px 20px; }
+.content pre .language { font-size: 12px; }
+.content pre .copycode { border: 0; background: transparent; cursor: pointer; width: 44px; height: 44px; }
+.content .mermaid { overflow-x: auto; padding: 18px 0; text-align: center; }
+.content .mermaid svg { max-width: 100%; height: auto; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 8px 0; }
+.content details { margin: 20px 0; border: 1px solid #e0e8f6; border-radius: 10px; padding: 12px 18px; }
+.content details summary { cursor: pointer; color: var(--note-accent); }
+.notes-toc { position: sticky; top: 76px; max-height: calc(100vh - 100px); overflow-y: auto; border: 1px solid #e5eaf6; border-radius: 16px; background: #ffffffea; padding: 17px 15px; font-size: 13px; }
+.notes-toc summary { cursor: pointer; font-size: 15px; font-weight: 600; color: #3d5479; }
+.toc-controls { display: flex; gap: 14px; margin: 12px 0; }
+.toc-controls button { color: #7a8ca9; font-size: 12px; border: 0; background: transparent; cursor: pointer; }
+.notes-toc ol { list-style: none; padding-left: 14px; margin: 0; }
+.notes-toc nav > ol { padding-left: 0; }
+.notes-toc li { margin: 5px 0; padding-left: 17px; line-height: 1.6; }
+.notes-toc a { color: #6f7e94; display: inline-block; padding: 2px 0; }
+.notes-toc a:hover, .notes-toc a.is-active { color: var(--note-pink); }
+.notes-toc .toc-toggle { position: absolute; left: -2px; top: 1px; border: 0; background: none; padding: 0; width: 17px; height: 22px; color: #899fc3; cursor: pointer; }
+.notes-toc [hidden] { display: none !important; }
+@media (max-width: 1179px) {
+  .reading-layout { max-width: 940px; display: flex; flex-direction: column; padding: 0 20px; gap: 20px; }
+  .notes-toc { position: static; width: 100%; max-height: 400px; box-sizing: border-box; }
+  .reading-layout .article { width: 100%; box-sizing: border-box; }
+  #menu #desktop-menu a { margin-left: 17px; }
+  #menu #desktop-menu .title { margin-left: 22px; }
+}
+@media (min-width: 1180px) {
+  .notes-toc { grid-column: 2; grid-row: 1; }
+  .reading-layout .article { grid-column: 1; grid-row: 1; }
+}
+@media (max-width: 600px) {
+  .reading-layout { margin-top: 74px; padding: 0 12px; }
+  .reading-layout .article { padding: 24px 20px; border-radius: 14px; }
+  .article .content { font-size: 15px; }
+}
+@media (max-width: 900px) {
+  #home-head { align-items: flex-end; justify-content: center; padding: 0 20px 9vh; }
+  #home-head #home-background { background-position: 43% 50%; }
+  #home-head #home-info { width: min(100%, 330px); height: auto; }
+  #home-head #home-info .info { width: 100%; height: auto; border-radius: 24px; }
+  #home-head #home-info .info .wrap { padding: 20px 22px; }
+  #home-head #home-info .info .wrap h1 { font-size: 28px; margin-bottom: 6px; }
+  #home-head #home-info .info .wrap h3 { font-size: 15px; margin: 8px 0; }
+  #home-head #home-info .info .wrap h5 { font-size: 12px; margin: 8px 0; }
+}
+@media print {
+  #menu, #menu-curtain, #loading, #footer, .notes-toc, .copycode { display: none !important; }
+  body { background: #fff; }
+  .reading-layout { display: block; max-width: none; margin: 0; padding: 0; }
+  .reading-layout .article { padding: 0; border: 0; box-shadow: none; }
+  .content pre .code-content { white-space: pre-wrap; }
+}

@@ -1,0 +1,74 @@
+avatar: /images/avatar.svg
+background:
+  - /images/background.jpg
+loading: /images/loading.svg
+colors:
+  - '#6689c7'
+  - '#d879a2'
+  - '#648d87'
+  - '#9b7fc0'
+menu:
+  首页:
+    name: house
+    theme: solid
+    link: /
+  课程笔记:
+    name: book-open
+    theme: solid
+    link: /courses/
+  归档与搜索:
+    name: box-archive
+    theme: solid
+    link: /archives/
+  分类:
+    name: bookmark
+    theme: solid
+    link: /categories/
+  标签:
+    name: tags
+    theme: solid
+    link: /tags/
+  关于:
+    name: id-card
+    theme: solid
+    link: /about/
+card:
+  enable: true
+  description: |
+    在这里整理学过的知识，
+    也留下喜欢的事物。
+  iconLinks:
+    GitHub:
+      name: github
+      theme: brands
+      link: https://github.com/kanata-0527
+  friendLinks: null
+footer:
+  since: 2026
+  ICP:
+    enable: false
+polyfill:
+  enable: false
+highlight:
+  enable: true
+  style: github
+math:
+  enable: true
+preview:
+  enable: true
+search:
+  enable: true
+crypto:
+  enable: false
+gitalk:
+  enable: false
+giscus:
+  enable: false
+waline:
+  enable: false
+twikoo:
+  enable: false
+notes:
+  toc: true
+  toc_max_depth: 4
+  mermaid: true
